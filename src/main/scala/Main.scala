@@ -14,7 +14,6 @@ object Main extends App {
   println("Input")
   println()
   lines.foreach(println)
-  println("==============================")
   val content = mutable.ListBuffer.empty[String]
   val tests = lines.head.toInt
   var currentTest = 0
