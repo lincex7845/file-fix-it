@@ -1,4 +1,6 @@
+import java.io.{File, PrintWriter}
 import java.nio.file.{Files, Paths}
+
 import collection.JavaConverters._
 import scala.collection.mutable
 import scala.io.StdIn
@@ -35,6 +37,9 @@ object Main extends App {
   content.foreach(println)
   println("==============================")
 
+  val pw = new PrintWriter(new File("/tmp/out.txt"))
+  content.foreach(s => pw.write(s.concat("\n")))
+  pw.close()
 
   def resolveTest(numberOfTest: Int, index: Int, lines: List[String]): (Int, Int, Int) = {
     val _m_n: Array[Int] = lines(index).split(" ").map(_.toInt)
